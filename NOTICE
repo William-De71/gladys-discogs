@@ -1,0 +1,15 @@
+Gladys Discogs integration
+Copyright 2026 William Deren
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The records, collections, wantlists, values, prices and covers come from
+Discogs (https://www.discogs.com), through its official API
+(https://www.discogs.com/developers), used with the personal access token of
+each user and under the Discogs API Terms of Use. As those terms ask, the
+widgets show "Data provided by Discogs", and the documentation and the README
+credit it. The files under test/fixtures are reduced answers of this API, kept
+for the tests only.
+
+Discogs is a trademark of Zink Media, LLC. This community integration is not
+affiliated with, endorsed or sponsored by Discogs.

@@ -1,0 +1,46 @@
+{
+  "id": 644773,
+  "title": "London Calling",
+  "year": 1999,
+  "artists": [
+    {
+      "name": "The Clash",
+      "anv": "",
+      "join": "",
+      "id": 29890
+    }
+  ],
+  "labels": [
+    {
+      "name": "Columbia",
+      "catno": "495347 2",
+      "id": 1866
+    },
+    {
+      "name": "Columbia",
+      "catno": "4953472000",
+      "id": 1866
+    }
+  ],
+  "formats": [
+    {
+      "name": "CD",
+      "qty": "1",
+      "descriptions": ["Album", "Reissue", "Remastered", "Stereo"]
+    }
+  ],
+  "genres": ["Rock"],
+  "styles": ["Punk"],
+  "thumb": "https://i.discogs.com/ZIMmzP54XI2FDIhMZfScLljcPUTkOPM_uCwfD4Q8IuE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY0NDc3/My0xMTg2MTI2NDc3/LmpwZWc.jpeg",
+  "images": [
+    {
+      "type": "primary",
+      "uri": "https://i.discogs.com/eK25Bd0uVo2MNHs2DSFyq1i-Jwcg-qMjlyFnhu3CoOc/rs:fit/g:sm/q:90/h:592/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY0NDc3/My0xMTg2MTI2NDc3/LmpwZWc.jpeg",
+      "uri150": "https://i.discogs.com/ZIMmzP54XI2FDIhMZfScLljcPUTkOPM_uCwfD4Q8IuE/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTY0NDc3/My0xMTg2MTI2NDc3/LmpwZWc.jpeg",
+      "width": 600,
+      "height": 592
+    }
+  ],
+  "country": "Europe",
+  "master_id": 19382
+}

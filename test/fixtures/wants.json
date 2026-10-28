@@ -1,0 +1,213 @@
+{
+  "pagination": {
+    "page": 1,
+    "pages": 1,
+    "per_page": 25,
+    "items": 5,
+    "urls": {}
+  },
+  "wants": [
+    {
+      "id": 1201588,
+      "date_added": "2026-06-17T12:28:02-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 1201588,
+        "master_id": 255573,
+        "title": "\"2006\" Remixes III",
+        "year": 2007,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": ["12\"", "45 RPM"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Mental Groove Records",
+            "catno": "MGLTD 019",
+            "id": 488
+          }
+        ],
+        "artists": [
+          {
+            "name": "Crowdpleaser & St. Plomb",
+            "anv": "",
+            "join": "",
+            "id": 588098
+          }
+        ],
+        "thumb": "https://i.discogs.com/twi_Pxk_M-tQV9yahkTUp5_eb81fjdD9FgvbxZS4w8M/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyMDE1/ODgtMTI5ODMxMjU0/Ny5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/9kSplkQZPJznMh0m9zAkp6fEp5u1vMUGmwRSzTZ4ZK4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyMDE1/ODgtMTI5ODMxMjU0/Ny5qcGVn.jpeg",
+        "genres": ["Electronic"],
+        "styles": ["House", "Techno"]
+      }
+    },
+    {
+      "id": 7996136,
+      "date_added": "2024-03-02T10:42:20-08:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 7996136,
+        "master_id": 0,
+        "title": "Bookbinders EP",
+        "year": 2016,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": ["12\"", "EP"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Meandyou",
+            "catno": "MEANDYOU04",
+            "id": 589208
+          }
+        ],
+        "artists": [
+          {
+            "name": "Various",
+            "anv": "",
+            "join": "",
+            "id": 194
+          }
+        ],
+        "thumb": "https://i.discogs.com/4pe1Fidk3rARn8OZyKUzKezT_mAaVofWRGsD7i4Nwmk/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc5OTYx/MzYtMTQ1MzE0MzMy/OS02NDU2LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/IUVdcIYAlMyA-klrk-o7TjU7uxEWo8zSB4KEaGth1Ck/rs:fit/g:sm/q:90/h:590/w:590/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTc5OTYx/MzYtMTQ1MzE0MzMy/OS02NDU2LmpwZWc.jpeg",
+        "genres": ["Electronic"],
+        "styles": ["Deep House", "Experimental", "Ambient"]
+      }
+    },
+    {
+      "id": 1240488,
+      "date_added": "2024-02-28T11:25:48-08:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 1240488,
+        "master_id": 37009,
+        "title": "Heartbeats",
+        "year": 2004,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": ["12\""]
+          }
+        ],
+        "labels": [
+          {
+            "name": "V2",
+            "catno": "VVR5029276",
+            "id": 28607
+          },
+          {
+            "name": "Rabid Records",
+            "catno": "VVR5029276",
+            "id": 12349
+          }
+        ],
+        "artists": [
+          {
+            "name": "The Knife",
+            "anv": "",
+            "join": "",
+            "id": 87717
+          }
+        ],
+        "thumb": "https://i.discogs.com/gbBcm4QDABjOm3uNuuPt-uO4_2dwXnCw67CO0cDiJuo/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDA0/ODgtMTMxNDI3MDY1/NC5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/-9N1_FU9-fKakl_MdFbYy1bgv8cRW0pYx8AGZtEhWPE/rs:fit/g:sm/q:90/h:599/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNDA0/ODgtMTMxNDI3MDY1/NC5qcGVn.jpeg",
+        "genres": ["Electronic"],
+        "styles": ["House", "Electro"]
+      }
+    },
+    {
+      "id": 9659733,
+      "date_added": "2023-10-29T13:51:36-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 9659733,
+        "master_id": 0,
+        "title": "After Dark (Dixon Edit) / Waiting For A (Woman) (Revenge Rework Dixon Beat Edit)",
+        "year": 2017,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": ["12\""]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Philomena",
+            "catno": "PHILOMENA 013",
+            "id": 174886
+          }
+        ],
+        "artists": [
+          {
+            "name": "Eliot Sumner",
+            "anv": "",
+            "join": "/",
+            "id": 4547167
+          },
+          {
+            "name": "Auntie Flo",
+            "anv": "",
+            "join": "",
+            "id": 2195918
+          }
+        ],
+        "thumb": "https://i.discogs.com/AAmz-ADtuqJ_9G4sY8BMlGRmDfIyGAaPSwpQ49XpNxM/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTk2NTk3/MzMtMTQ4NDM1Mzkx/MS0zNDczLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/joUP6NvxYfnWz1iVm61IeiuLKdGYcbbVdYgJZKFREG0/rs:fit/g:sm/q:90/h:500/w:500/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTk2NTk3/MzMtMTQ4NDM1Mzkx/MS0zNDczLmpwZWc.jpeg",
+        "genres": ["Electronic", "Folk, World, & Country"],
+        "styles": ["House", "African"]
+      }
+    },
+    {
+      "id": 3129044,
+      "date_added": "2023-10-29T13:51:17-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 3129044,
+        "master_id": 0,
+        "title": "Move On Me (Marcus Worgull Edit) / Kalimba",
+        "year": 2011,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": ["12\"", "45 RPM"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Philomena",
+            "catno": "PHILOMENA 06",
+            "id": 174886
+          }
+        ],
+        "artists": [
+          {
+            "name": "Fink",
+            "anv": "",
+            "join": "/",
+            "id": 4080
+          },
+          {
+            "name": "Red Rack'Em",
+            "anv": "",
+            "join": "",
+            "id": 1302587
+          }
+        ],
+        "thumb": "https://i.discogs.com/3qhAhyLhdxFFhICARVMSCoWzn6NQCa1TkPKjz_AL-ig/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMjkw/NDQtMTMxNzExODg5/Mi5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/WVqvTcv9sGSXReRD3dJ69C0ld5dejSD2I08lHyFHsHM/rs:fit/g:sm/q:90/h:296/w:296/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTMxMjkw/NDQtMTMxNzExODg5/Mi5qcGVn.jpeg",
+        "genres": ["Electronic"],
+        "styles": ["Techno", "Deep House"]
+      }
+    }
+  ]
+}

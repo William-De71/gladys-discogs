@@ -1,0 +1,14 @@
+{
+  "id": 1234567,
+  "username": "gladys_tester",
+  "resource_url": "https://api.discogs.com/users/gladys_tester",
+  "uri": "https://www.discogs.com/user/gladys_tester",
+  "name": "",
+  "num_collection": 6,
+  "num_wantlist": 5,
+  "num_for_sale": 2,
+  "num_lists": 0,
+  "curr_abbr": "EUR",
+  "email": "tester@example.com",
+  "registered": "2014-03-02T08:12:44-08:00"
+}

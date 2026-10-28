@@ -1,0 +1,8 @@
+{
+  "num_for_sale": 137,
+  "lowest_price": {
+    "value": 1.1,
+    "currency": "EUR"
+  },
+  "blocked_from_sale": false
+}

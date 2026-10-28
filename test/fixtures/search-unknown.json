@@ -1,0 +1,172 @@
+{
+  "pagination": {
+    "page": 1,
+    "pages": 3333,
+    "per_page": 3,
+    "items": 5788006,
+    "urls": {
+      "last": "https://api.discogs.com/database/search?barcode=0000000000000&type=release&per_page=3&page=3333",
+      "next": "https://api.discogs.com/database/search?barcode=0000000000000&type=release&per_page=3&page=2"
+    }
+  },
+  "results": [
+    {
+      "country": "US",
+      "year": "2016",
+      "format": [
+        "Vinyl",
+        "LP",
+        "Album",
+        "Limited Edition",
+        "Numbered",
+        "Reissue",
+        "Remastered",
+        "Special Edition"
+      ],
+      "label": [
+        "Mobile Fidelity Sound Lab",
+        "Universal Music Special Markets",
+        "Geffen Records",
+        "Original Master Recording",
+        "GAIN 2™ Ultra Analog LP 180g Series",
+        "Electric Lady Studios",
+        "Electric Lady Studios",
+        "Publishing Designee",
+        "Mobile Fidelity Sound Lab",
+        "Mobile Fidelity Sound Lab",
+        "Mobile Fidelity Sound Lab, Inc.",
+        "Universal Music Enterprises",
+        "Geffen Records",
+        "Geffen Records",
+        "Universal Music Enterprises",
+        "UMG Recordings, Inc.",
+        "Record Technology Incorporated",
+        "Record Technology Incorporated"
+      ],
+      "type": "release",
+      "genre": ["Rock"],
+      "style": ["Alternative Rock", "Indie Rock"],
+      "id": 16987791,
+      "barcode": [
+        "821797148016",
+        "MFSL1-3̶9̶0̶ 480 A2̶.̶1̶ 3  KW @ MoFi  20551.1(3)",
+        "MFSL1-3̶9̶0̶ 480 B2  KW @ MoFi  20520.2(3)"
+      ],
+      "master_id": 35266,
+      "master_url": "https://api.discogs.com/masters/35266",
+      "uri": "/release/16987791-Weezer-Weezer",
+      "catno": "MFSL 1-480",
+      "title": "Weezer - Weezer",
+      "thumb": "",
+      "cover_image": "",
+      "resource_url": "https://api.discogs.com/releases/16987791",
+      "community": {
+        "want": 826,
+        "have": 442
+      },
+      "format_quantity": 1,
+      "formats": [
+        {
+          "name": "Vinyl",
+          "qty": "1",
+          "text": "Blue Translucent, 180g, Gatefold",
+          "descriptions": [
+            "LP",
+            "Album",
+            "Limited Edition",
+            "Numbered",
+            "Reissue",
+            "Remastered",
+            "Special Edition"
+          ]
+        }
+      ]
+    },
+    {
+      "country": "US",
+      "year": "1997",
+      "format": ["CD", "Album"],
+      "label": [
+        "Ng Records",
+        "Ng Records",
+        "BMG Distribution",
+        "Volcano Entertainment, L.L.C.",
+        "BMG Distribution",
+        "Easley Recording",
+        "Masterdisk",
+        "Gasoline Purr.",
+        "Cinram, Huntsville",
+        "Cinram, Huntsville"
+      ],
+      "type": "release",
+      "genre": ["Rock"],
+      "style": [],
+      "id": 6185940,
+      "barcode": ["7 0618-20012-2 3", "BMI", "NADV200122 W.O. 115486-4"],
+      "master_id": 0,
+      "master_url": null,
+      "uri": "/release/6185940-Butterflies-Butterflies",
+      "catno": "70618-20012-2",
+      "title": "Butterflies (3) - Butterflies",
+      "thumb": "",
+      "cover_image": "",
+      "resource_url": "https://api.discogs.com/releases/6185940",
+      "community": {
+        "want": 2,
+        "have": 20
+      },
+      "format_quantity": 1,
+      "formats": [
+        {
+          "name": "CD",
+          "qty": "1",
+          "descriptions": ["Album"]
+        }
+      ]
+    },
+    {
+      "country": "Europe",
+      "year": "2013",
+      "format": ["CD", "Album", "DVD", "DVD-Video", "Multichannel", "NTSC", "Stereo"],
+      "label": [
+        "Madfish",
+        "Snapper Music plc",
+        "Racket Records",
+        "Racket Records",
+        "The Forum, London",
+        "The Forum, London",
+        "Aleph Studio"
+      ],
+      "type": "release",
+      "genre": ["Rock"],
+      "style": ["Prog Rock"],
+      "id": 5069292,
+      "barcode": ["636551500722", "LC01757", "2100004303881   SMACD1007"],
+      "master_id": 265262,
+      "master_url": "https://api.discogs.com/masters/265262",
+      "uri": "/release/5069292-Marillion-Somewhere-In-London",
+      "catno": "SMACD1007",
+      "title": "Marillion - Somewhere In London",
+      "thumb": "",
+      "cover_image": "",
+      "resource_url": "https://api.discogs.com/releases/5069292",
+      "community": {
+        "want": 27,
+        "have": 407
+      },
+      "format_quantity": 3,
+      "formats": [
+        {
+          "name": "CD",
+          "qty": "2",
+          "descriptions": ["Album"]
+        },
+        {
+          "name": "DVD",
+          "qty": "1",
+          "descriptions": ["DVD-Video", "Multichannel", "NTSC", "Stereo"]
+        }
+      ]
+    }
+  ]
+}

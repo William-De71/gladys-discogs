@@ -1,0 +1,271 @@
+{
+  "pagination": {
+    "page": 1,
+    "pages": 1,
+    "per_page": 25,
+    "items": 6,
+    "urls": {}
+  },
+  "releases": [
+    {
+      "id": 1430077,
+      "instance_id": 2181725729,
+      "folder_id": 3,
+      "date_added": "2026-09-06T14:03:12-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 1430077,
+        "master_id": 21580,
+        "title": "Too Old Too Cold",
+        "year": 2006,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "text": "White",
+            "descriptions": ["12\"", "45 RPM", "Single"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Peaceville",
+            "catno": "VILELP145",
+            "id": 14465
+          },
+          {
+            "name": "Tyrant Syndicate",
+            "catno": "VILELP145",
+            "id": 76025
+          }
+        ],
+        "artists": [
+          {
+            "name": "Darkthrone",
+            "anv": "",
+            "join": "",
+            "id": 252211
+          }
+        ],
+        "thumb": "https://i.discogs.com/fmUPL1pFxHqUXFnfZQToRGqrtu0-qI_mXIz4EqNuCHA/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MzAw/NzctMTU1MzUxMDUz/Ni0yNjkzLmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/NqY6PQmf863wSy4eGkb0adIxy8-yIATIPgeYRCPEAkY/rs:fit/g:sm/q:90/h:598/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE0MzAw/NzctMTU1MzUxMDUz/Ni0yNjkzLmpwZWc.jpeg",
+        "genres": ["Rock"],
+        "styles": ["Black Metal", "Post-Punk"]
+      }
+    },
+    {
+      "id": 10571231,
+      "instance_id": 2150505684,
+      "folder_id": 3,
+      "date_added": "2026-05-31T00:35:09-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 10571231,
+        "master_id": 0,
+        "title": "Black Light / Black Star",
+        "year": 2011,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "1",
+            "descriptions": ["7\"", "45 RPM", "Limited Edition"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "Not On Label (Hieronymus Bosch Self-released)",
+            "catno": "none",
+            "id": 1284151
+          }
+        ],
+        "artists": [
+          {
+            "name": "Hieronymus Bosch",
+            "anv": "",
+            "join": "",
+            "id": 230811
+          }
+        ],
+        "thumb": "https://i.discogs.com/8bj2lqdc1errC1Io-KtovvqXx38MEEnpKVgJeivNR0I/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNTcx/MjMxLTE1MDAxMjA0/MDMtOTMyNC5qcGVn.jpeg",
+        "cover_image": "https://i.discogs.com/mpCDaVz4OOkVaaPDlFAK4Yj7QVXcHe67EYIgtnrjpag/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEwNTcx/MjMxLTE1MDAxMjA0/MDMtOTMyNC5qcGVn.jpeg",
+        "genres": ["Electronic"],
+        "styles": ["Dark Ambient", "Industrial"]
+      }
+    },
+    {
+      "id": 1124817,
+      "instance_id": 2148373091,
+      "folder_id": 1,
+      "date_added": "2026-05-23T23:32:50-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 1124817,
+        "master_id": 20768,
+        "title": "Run To The Hills · The Number Of The Beast",
+        "year": 1990,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "2",
+            "descriptions": ["12\"", "33 ⅓ RPM", "Compilation", "Limited Edition"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "EMI",
+            "catno": "IRN 4",
+            "id": 26126
+          },
+          {
+            "name": "EMI",
+            "catno": "79 3981 1",
+            "id": 26126
+          }
+        ],
+        "artists": [
+          {
+            "name": "Iron Maiden",
+            "anv": "",
+            "join": "",
+            "id": 251595
+          }
+        ],
+        "thumb": "https://i.discogs.com/5H5O-lYAryKx5S2RY9avN2LU26Op4vRkOTj-DuCASiw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExMjQ4/MTctMTY0NDU5MDgy/OC0yNDE4LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/TpJlMlJ2zy5QJOsM35C_AtpboJw-81rqyKCQPn6VrUY/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTExMjQ4/MTctMTY0NDU5MDgy/OC0yNDE4LmpwZWc.jpeg",
+        "genres": ["Rock", "Non-Music"],
+        "styles": ["Spoken Word", "Heavy Metal"]
+      }
+    },
+    {
+      "id": 1874515,
+      "instance_id": 2148373066,
+      "folder_id": 4,
+      "date_added": "2026-05-23T23:32:44-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 1874515,
+        "master_id": 214079,
+        "title": "Flight Of Icarus · The Trooper",
+        "year": 1990,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "2",
+            "descriptions": ["12\"", "33 ⅓ RPM", "Compilation", "Limited Edition", "Stereo"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "EMI",
+            "catno": "IRN 5",
+            "id": 26126
+          },
+          {
+            "name": "EMI",
+            "catno": "IRN 51",
+            "id": 26126
+          }
+        ],
+        "artists": [
+          {
+            "name": "Iron Maiden",
+            "anv": "",
+            "join": "",
+            "id": 251595
+          }
+        ],
+        "thumb": "https://i.discogs.com/iVOyXta0UvKUUEGEqKv0xc0VR2Ajb17et1IWdIGu1Bw/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NzQ1/MTUtMTY0NDU5MDky/OS01Mzc3LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/4H7v-JNd0dthwinepSiwIDZx5vErS52qnb_y3xjZy8U/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4NzQ1/MTUtMTY0NDU5MDky/OS01Mzc3LmpwZWc.jpeg",
+        "genres": ["Rock", "Non-Music"],
+        "styles": ["Spoken Word", "Heavy Metal"]
+      }
+    },
+    {
+      "id": 1810405,
+      "instance_id": 2148373060,
+      "folder_id": 1,
+      "date_added": "2026-05-23T23:32:40-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 1810405,
+        "master_id": 150038,
+        "title": "2 Minutes To Midnight · Aces High",
+        "year": 1990,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "2",
+            "descriptions": ["12\"", "33 ⅓ RPM", "Compilation", "Limited Edition"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "EMI",
+            "catno": "IRN 6",
+            "id": 26126
+          },
+          {
+            "name": "EMI",
+            "catno": "793 992 1",
+            "id": 26126
+          }
+        ],
+        "artists": [
+          {
+            "name": "Iron Maiden",
+            "anv": "",
+            "join": "",
+            "id": 251595
+          }
+        ],
+        "thumb": "https://i.discogs.com/g1ZCYXpVURsRutWr-5VH8u-wLDQBH8HQtpwSU-U3vFg/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MTA0/MDUtMTY0NDU5MTAy/OC04MjE5LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/Pi7n1bZNDTiIXnM7iLjF1eSZFbKT4BDioPuKEvIkhEA/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTE4MTA0/MDUtMTY0NDU5MTAy/OC04MjE5LmpwZWc.jpeg",
+        "genres": ["Rock", "Non-Music"],
+        "styles": ["Spoken Word", "Heavy Metal"]
+      }
+    },
+    {
+      "id": 2224010,
+      "instance_id": 2148373044,
+      "folder_id": 3,
+      "date_added": "2026-05-23T23:32:33-07:00",
+      "rating": 0,
+      "basic_information": {
+        "id": 2224010,
+        "master_id": 239963,
+        "title": "Wasted Years · Stranger In A Strange Land",
+        "year": 1990,
+        "formats": [
+          {
+            "name": "Vinyl",
+            "qty": "2",
+            "descriptions": ["12\"", "33 ⅓ RPM", "Compilation", "Limited Edition"]
+          }
+        ],
+        "labels": [
+          {
+            "name": "EMI",
+            "catno": "IRN 8",
+            "id": 26126
+          },
+          {
+            "name": "EMI",
+            "catno": "79 3998 1",
+            "id": 26126
+          }
+        ],
+        "artists": [
+          {
+            "name": "Iron Maiden",
+            "anv": "",
+            "join": "",
+            "id": 251595
+          }
+        ],
+        "thumb": "https://i.discogs.com/7OBOIC59LbAzb7zFImkaFwdpDnHlpfBRzPN1bNyXhd0/rs:fit/g:sm/q:40/h:150/w:150/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIyMjQw/MTAtMTY0NDU5MTIz/NS02NzM1LmpwZWc.jpeg",
+        "cover_image": "https://i.discogs.com/-bRbPISQl3whQrYlL3v04eTEx2FnprMLsgHZA5mDySI/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIyMjQw/MTAtMTY0NDU5MTIz/NS02NzM1LmpwZWc.jpeg",
+        "genres": ["Rock", "Non-Music"],
+        "styles": ["Spoken Word", "Heavy Metal"]
+      }
+    }
+  ]
+}

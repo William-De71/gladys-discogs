@@ -1,0 +1,1877 @@
+{
+  "manifest_version": 1,
+  "type": "device",
+  "name": "Discogs",
+  "description": {
+    "en": "Your Discogs record collection: records, wantlist, value, new additions, covers.",
+    "fr": "Votre collection Discogs : disques, wantlist, valeur, nouveaux ajouts, pochettes.",
+    "de": "Deine Discogs-Sammlung: Tonträger, Wantlist, Wert, Neuzugänge und Cover.",
+    "es": "Tu colección de Discogs: discos, lista de deseos, valor, novedades y portadas."
+  },
+  "version": "0.1.0",
+  "docker_image": "ghcr.io/william-de71/gladys-discogs:0.1.0",
+  "gladys_version": ">=5.3.0",
+  "categories": ["multimedia", "leisure"],
+  "keywords": [
+    "discogs",
+    "vinyl",
+    "vinyle",
+    "records",
+    "disques",
+    "collection",
+    "wantlist",
+    "cd",
+    "barcode",
+    "code-barres"
+  ],
+  "cover_image": "https://raw.githubusercontent.com/William-De71/gladys-discogs/main/cover.jpg",
+  "transports": ["cloud"],
+  "config_schema": [
+    {
+      "key": "intro",
+      "type": "section",
+      "label": {
+        "en": "Discogs",
+        "fr": "Discogs",
+        "de": "Discogs",
+        "es": "Discogs"
+      },
+      "description": {
+        "en": "Your collection, your wantlist and their value come from the official API of Discogs, with a personal access token of your account: on discogs.com, open Settings → Developers and press \"Generate new token\", then paste it below and press \"Test the connection\". The token can read and change your collection and your wantlist, nothing else; it stays in Gladys. Data provided by Discogs. Not affiliated with Discogs.",
+        "fr": "Votre collection, votre wantlist et leur valeur viennent de l’API officielle de Discogs, avec un jeton d’accès personnel de votre compte : sur discogs.com, ouvrez Settings → Developers et appuyez sur « Generate new token », puis collez-le ci-dessous et appuyez sur « Tester la connexion ». Le jeton peut lire et modifier votre collection et votre wantlist, rien d’autre ; il reste dans Gladys. Données fournies par Discogs. Sans lien avec Discogs.",
+        "de": "Deine Sammlung, deine Wantlist und ihr Wert kommen aus der offiziellen API von Discogs, mit einem persönlichen Zugriffstoken deines Kontos: Öffne auf discogs.com Settings → Developers und drücke „Generate new token“, füge es unten ein und drücke „Verbindung testen“. Das Token kann deine Sammlung und deine Wantlist lesen und ändern, sonst nichts; es bleibt in Gladys. Daten von Discogs. Nicht mit Discogs verbunden.",
+        "es": "Tu colección, tu lista de deseos y su valor proceden de la API oficial de Discogs, con un token de acceso personal de tu cuenta: en discogs.com, abre Settings → Developers y pulsa «Generate new token», pégalo abajo y pulsa «Probar la conexión». El token puede leer y modificar tu colección y tu lista de deseos, nada más; se queda en Gladys. Datos proporcionados por Discogs. Sin relación con Discogs."
+      },
+      "links": [
+        {
+          "url": "https://www.discogs.com/settings/developers",
+          "label": {
+            "en": "Generate a token",
+            "fr": "Générer un jeton",
+            "de": "Token erzeugen",
+            "es": "Generar un token"
+          }
+        },
+        {
+          "url": "https://www.discogs.com/developers",
+          "label": {
+            "en": "Discogs API documentation",
+            "fr": "Documentation de l’API Discogs",
+            "de": "Dokumentation der Discogs-API",
+            "es": "Documentación de la API de Discogs"
+          }
+        }
+      ]
+    },
+    {
+      "key": "token",
+      "type": "secret",
+      "label": {
+        "en": "Personal access token",
+        "fr": "Jeton d’accès personnel",
+        "de": "Persönliches Zugriffstoken",
+        "es": "Token de acceso personal"
+      },
+      "description": {
+        "en": "The token of Settings → Developers on discogs.com (40 letters and digits).",
+        "fr": "Le jeton de Settings → Developers sur discogs.com (40 lettres et chiffres).",
+        "de": "Das Token unter Settings → Developers auf discogs.com (40 Buchstaben und Ziffern).",
+        "es": "El token de Settings → Developers en discogs.com (40 letras y cifras)."
+      },
+      "required": true
+    },
+    {
+      "key": "options_section",
+      "type": "section",
+      "label": {
+        "en": "Options",
+        "fr": "Options",
+        "de": "Optionen",
+        "es": "Opciones"
+      }
+    },
+    {
+      "key": "interval",
+      "type": "select",
+      "label": {
+        "en": "Reading of the account",
+        "fr": "Lecture du compte",
+        "de": "Abfrage des Kontos",
+        "es": "Lectura de la cuenta"
+      },
+      "description": {
+        "en": "How often the collection and the wantlist are read: five requests each time. The Discogs API allows 60 requests per minute.",
+        "fr": "La fréquence de lecture de la collection et de la wantlist : cinq requêtes à chaque fois. L’API Discogs autorise 60 requêtes par minute.",
+        "de": "Wie oft Sammlung und Wantlist gelesen werden: jedes Mal fünf Anfragen. Die Discogs-API erlaubt 60 Anfragen pro Minute.",
+        "es": "Cada cuánto se leen la colección y la lista de deseos: cinco solicitudes cada vez. La API de Discogs permite 60 solicitudes por minuto."
+      },
+      "options": [
+        {
+          "value": "900",
+          "label": {
+            "en": "Every 15 minutes",
+            "fr": "Toutes les 15 minutes",
+            "de": "Alle 15 Minuten",
+            "es": "Cada 15 minutos"
+          }
+        },
+        {
+          "value": "1800",
+          "label": {
+            "en": "Every 30 minutes",
+            "fr": "Toutes les 30 minutes",
+            "de": "Alle 30 Minuten",
+            "es": "Cada 30 minutos"
+          }
+        },
+        {
+          "value": "3600",
+          "label": {
+            "en": "Every hour",
+            "fr": "Toutes les heures",
+            "de": "Jede Stunde",
+            "es": "Cada hora"
+          }
+        },
+        {
+          "value": "10800",
+          "label": {
+            "en": "Every 3 hours",
+            "fr": "Toutes les 3 heures",
+            "de": "Alle 3 Stunden",
+            "es": "Cada 3 horas"
+          }
+        }
+      ],
+      "default": "1800",
+      "required": false
+    },
+    {
+      "key": "currency",
+      "type": "select",
+      "label": {
+        "en": "Currency of the prices",
+        "fr": "Devise des prix",
+        "de": "Währung der Preise",
+        "es": "Moneda de los precios"
+      },
+      "description": {
+        "en": "The currency of the marketplace prices (\"price of a record\"). The value of the collection always comes in the currency of your Discogs account.",
+        "fr": "La devise des prix du marché (« prix d’un disque »). La valeur de la collection est toujours dans la devise de votre compte Discogs.",
+        "de": "Die Währung der Marktplatzpreise („Preis eines Tonträgers“). Der Wert der Sammlung kommt immer in der Währung deines Discogs-Kontos.",
+        "es": "La moneda de los precios del mercado («precio de un disco»). El valor de la colección viene siempre en la moneda de tu cuenta de Discogs."
+      },
+      "options": [
+        {
+          "value": "auto",
+          "label": {
+            "en": "The one of my account",
+            "fr": "Celle de mon compte",
+            "de": "Die meines Kontos",
+            "es": "La de mi cuenta"
+          }
+        },
+        {
+          "value": "USD",
+          "label": {
+            "en": "USD",
+            "fr": "USD",
+            "de": "USD",
+            "es": "USD"
+          }
+        },
+        {
+          "value": "GBP",
+          "label": {
+            "en": "GBP",
+            "fr": "GBP",
+            "de": "GBP",
+            "es": "GBP"
+          }
+        },
+        {
+          "value": "EUR",
+          "label": {
+            "en": "EUR",
+            "fr": "EUR",
+            "de": "EUR",
+            "es": "EUR"
+          }
+        },
+        {
+          "value": "CAD",
+          "label": {
+            "en": "CAD",
+            "fr": "CAD",
+            "de": "CAD",
+            "es": "CAD"
+          }
+        },
+        {
+          "value": "AUD",
+          "label": {
+            "en": "AUD",
+            "fr": "AUD",
+            "de": "AUD",
+            "es": "AUD"
+          }
+        },
+        {
+          "value": "JPY",
+          "label": {
+            "en": "JPY",
+            "fr": "JPY",
+            "de": "JPY",
+            "es": "JPY"
+          }
+        },
+        {
+          "value": "CHF",
+          "label": {
+            "en": "CHF",
+            "fr": "CHF",
+            "de": "CHF",
+            "es": "CHF"
+          }
+        },
+        {
+          "value": "MXN",
+          "label": {
+            "en": "MXN",
+            "fr": "MXN",
+            "de": "MXN",
+            "es": "MXN"
+          }
+        },
+        {
+          "value": "BRL",
+          "label": {
+            "en": "BRL",
+            "fr": "BRL",
+            "de": "BRL",
+            "es": "BRL"
+          }
+        },
+        {
+          "value": "NZD",
+          "label": {
+            "en": "NZD",
+            "fr": "NZD",
+            "de": "NZD",
+            "es": "NZD"
+          }
+        },
+        {
+          "value": "SEK",
+          "label": {
+            "en": "SEK",
+            "fr": "SEK",
+            "de": "SEK",
+            "es": "SEK"
+          }
+        },
+        {
+          "value": "ZAR",
+          "label": {
+            "en": "ZAR",
+            "fr": "ZAR",
+            "de": "ZAR",
+            "es": "ZAR"
+          }
+        }
+      ],
+      "default": "auto",
+      "required": false
+    },
+    {
+      "key": "language",
+      "type": "select",
+      "label": {
+        "en": "Language of the texts",
+        "fr": "Langue des textes",
+        "de": "Sprache der Texte",
+        "es": "Idioma de los textos"
+      },
+      "description": {
+        "en": "Language of the device names and of the sentences of the scene actions. Automatic: the language of the last dashboard opened.",
+        "fr": "Langue des noms des appareils et des phrases des actions de scène. Automatique : la langue du dernier tableau de bord ouvert.",
+        "de": "Sprache der Gerätenamen und der Sätze der Szenenaktionen. Automatisch: die Sprache des zuletzt geöffneten Dashboards.",
+        "es": "Idioma de los nombres de los dispositivos y de las frases de las acciones de escena. Automático: el idioma del último panel abierto."
+      },
+      "options": [
+        {
+          "value": "auto",
+          "label": {
+            "en": "Automatic",
+            "fr": "Automatique",
+            "de": "Automatisch",
+            "es": "Automático"
+          }
+        },
+        {
+          "value": "en",
+          "label": {
+            "en": "English",
+            "fr": "English",
+            "de": "English",
+            "es": "English"
+          }
+        },
+        {
+          "value": "fr",
+          "label": {
+            "en": "Français",
+            "fr": "Français",
+            "de": "Français",
+            "es": "Français"
+          }
+        },
+        {
+          "value": "de",
+          "label": {
+            "en": "Deutsch",
+            "fr": "Deutsch",
+            "de": "Deutsch",
+            "es": "Deutsch"
+          }
+        },
+        {
+          "value": "es",
+          "label": {
+            "en": "Español",
+            "fr": "Español",
+            "de": "Español",
+            "es": "Español"
+          }
+        }
+      ],
+      "default": "auto",
+      "required": false
+    }
+  ],
+  "actions": [
+    {
+      "key": "test_connection",
+      "label": {
+        "en": "Test the connection",
+        "fr": "Tester la connexion",
+        "de": "Verbindung testen",
+        "es": "Probar la conexión"
+      },
+      "description": {
+        "en": "Reads your account now and offers its devices on the Discovery screen.",
+        "fr": "Lit votre compte tout de suite et propose ses appareils dans l’écran de découverte.",
+        "de": "Liest dein Konto sofort und bietet seine Geräte in der Geräteerkennung an.",
+        "es": "Lee tu cuenta ahora y ofrece sus dispositivos en la pantalla de detección."
+      },
+      "timeout_seconds": 60
+    },
+    {
+      "key": "diagnostic",
+      "label": {
+        "en": "Diagnostic",
+        "fr": "Diagnostic",
+        "de": "Diagnose",
+        "es": "Diagnóstico"
+      },
+      "description": {
+        "en": "Writes what the integration knows in its logs (the token hidden), to attach to an issue.",
+        "fr": "Écrit ce que sait l’intégration dans ses journaux (jeton masqué), à joindre à un ticket.",
+        "de": "Schreibt, was die Integration weiß, in ihre Protokolle (Token verborgen), für ein Ticket.",
+        "es": "Escribe lo que sabe la integración en sus registros (token oculto), para adjuntarlo a una incidencia."
+      },
+      "timeout_seconds": 15
+    }
+  ],
+  "scene_triggers": [
+    {
+      "key": "collection_added",
+      "label": {
+        "en": "Discogs: record added to the collection",
+        "fr": "Discogs : disque ajouté à la collection",
+        "de": "Discogs: Tonträger zur Sammlung hinzugefügt",
+        "es": "Discogs: disco añadido a la colección"
+      },
+      "description": {
+        "en": "A record was added to your collection (seen at the next reading of the account).",
+        "fr": "Un disque a été ajouté à votre collection (vu à la lecture suivante du compte).",
+        "de": "Ein Tonträger wurde zu deiner Sammlung hinzugefügt (bei der nächsten Abfrage des Kontos erkannt).",
+        "es": "Se añadió un disco a tu colección (visto en la siguiente lectura de la cuenta)."
+      },
+      "fields": [
+        {
+          "key": "folder",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Folder",
+            "fr": "Dossier",
+            "de": "Ordner",
+            "es": "Carpeta"
+          },
+          "description": {
+            "en": "A folder device of the integration. Leave empty for any folder.",
+            "fr": "Un appareil dossier de l’intégration. Laissez vide pour n’importe quel dossier.",
+            "de": "Ein Ordner-Gerät der Integration. Leer lassen für jeden Ordner.",
+            "es": "Un dispositivo carpeta de la integración. Déjalo vacío para cualquier carpeta."
+          },
+          "required": false
+        },
+        {
+          "key": "format",
+          "type": "select",
+          "label": {
+            "en": "Format",
+            "fr": "Format",
+            "de": "Format",
+            "es": "Formato"
+          },
+          "description": {
+            "en": "Only the records of this format (the first format of the release). Leave empty for any format.",
+            "fr": "Seulement les disques de ce format (le premier format de l’édition). Laissez vide pour tous les formats.",
+            "de": "Nur Tonträger in diesem Format (das erste Format der Veröffentlichung). Leer lassen für jedes Format.",
+            "es": "Solo los discos de este formato (el primer formato de la edición). Déjalo vacío para cualquier formato."
+          },
+          "options": [
+            {
+              "value": "Vinyl",
+              "label": {
+                "en": "Vinyl",
+                "fr": "Vinyle",
+                "de": "Vinyl",
+                "es": "Vinilo"
+              }
+            },
+            {
+              "value": "CD",
+              "label": {
+                "en": "CD",
+                "fr": "CD",
+                "de": "CD",
+                "es": "CD"
+              }
+            },
+            {
+              "value": "Cassette",
+              "label": {
+                "en": "Cassette",
+                "fr": "Cassette",
+                "de": "Kassette",
+                "es": "Casete"
+              }
+            },
+            {
+              "value": "File",
+              "label": {
+                "en": "File (digital)",
+                "fr": "Fichier (numérique)",
+                "de": "Datei (digital)",
+                "es": "Archivo (digital)"
+              }
+            },
+            {
+              "value": "CDr",
+              "label": {
+                "en": "CDr",
+                "fr": "CDr",
+                "de": "CDr",
+                "es": "CDr"
+              }
+            },
+            {
+              "value": "Box Set",
+              "label": {
+                "en": "Box set",
+                "fr": "Coffret",
+                "de": "Box-Set",
+                "es": "Caja recopilatoria"
+              }
+            },
+            {
+              "value": "DVD",
+              "label": {
+                "en": "DVD",
+                "fr": "DVD",
+                "de": "DVD",
+                "es": "DVD"
+              }
+            },
+            {
+              "value": "Blu-ray",
+              "label": {
+                "en": "Blu-ray",
+                "fr": "Blu-ray",
+                "de": "Blu-ray",
+                "es": "Blu-ray"
+              }
+            },
+            {
+              "value": "Shellac",
+              "label": {
+                "en": "Shellac (78 rpm)",
+                "fr": "Gomme-laque (78 tours)",
+                "de": "Schellack (78 U/min)",
+                "es": "Goma laca (78 rpm)"
+              }
+            },
+            {
+              "value": "Minidisc",
+              "label": {
+                "en": "MiniDisc",
+                "fr": "MiniDisc",
+                "de": "MiniDisc",
+                "es": "MiniDisc"
+              }
+            }
+          ],
+          "required": false
+        }
+      ],
+      "variables": [
+        {
+          "key": "release_id",
+          "type": "number",
+          "label": {
+            "en": "Release number",
+            "fr": "Numéro de l’édition",
+            "de": "Nummer der Veröffentlichung",
+            "es": "Número de la edición"
+          }
+        },
+        {
+          "key": "title",
+          "type": "string",
+          "label": {
+            "en": "Title",
+            "fr": "Titre",
+            "de": "Titel",
+            "es": "Título"
+          }
+        },
+        {
+          "key": "artist",
+          "type": "string",
+          "label": {
+            "en": "Artist",
+            "fr": "Artiste",
+            "de": "Künstler",
+            "es": "Artista"
+          }
+        },
+        {
+          "key": "year",
+          "type": "number",
+          "label": {
+            "en": "Year (0 if unknown)",
+            "fr": "Année (0 si inconnue)",
+            "de": "Jahr (0 wenn unbekannt)",
+            "es": "Año (0 si se desconoce)"
+          }
+        },
+        {
+          "key": "format",
+          "type": "string",
+          "label": {
+            "en": "Format",
+            "fr": "Format",
+            "de": "Format",
+            "es": "Formato"
+          }
+        },
+        {
+          "key": "formats",
+          "type": "string",
+          "label": {
+            "en": "Formats in detail",
+            "fr": "Formats en détail",
+            "de": "Formate im Detail",
+            "es": "Formatos en detalle"
+          }
+        },
+        {
+          "key": "label",
+          "type": "string",
+          "label": {
+            "en": "Label",
+            "fr": "Label",
+            "de": "Label",
+            "es": "Sello"
+          }
+        },
+        {
+          "key": "catno",
+          "type": "string",
+          "label": {
+            "en": "Catalog number",
+            "fr": "Numéro de catalogue",
+            "de": "Katalognummer",
+            "es": "Número de catálogo"
+          }
+        },
+        {
+          "key": "genre",
+          "type": "string",
+          "label": {
+            "en": "Genre",
+            "fr": "Genre",
+            "de": "Genre",
+            "es": "Género"
+          }
+        },
+        {
+          "key": "url",
+          "type": "string",
+          "label": {
+            "en": "Page on Discogs",
+            "fr": "Page sur Discogs",
+            "de": "Seite auf Discogs",
+            "es": "Página en Discogs"
+          }
+        },
+        {
+          "key": "cover_url",
+          "type": "string",
+          "label": {
+            "en": "Cover address",
+            "fr": "Adresse de la pochette",
+            "de": "Adresse des Covers",
+            "es": "Dirección de la portada"
+          }
+        },
+        {
+          "key": "folder_name",
+          "type": "string",
+          "label": {
+            "en": "Folder",
+            "fr": "Dossier",
+            "de": "Ordner",
+            "es": "Carpeta"
+          }
+        }
+      ]
+    },
+    {
+      "key": "wantlist_added",
+      "label": {
+        "en": "Discogs: record added to the wantlist",
+        "fr": "Discogs : disque ajouté à la wantlist",
+        "de": "Discogs: Tonträger zur Wantlist hinzugefügt",
+        "es": "Discogs: disco añadido a la lista de deseos"
+      },
+      "description": {
+        "en": "A record was added to your wantlist (seen at the next reading of the account).",
+        "fr": "Un disque a été ajouté à votre wantlist (vu à la lecture suivante du compte).",
+        "de": "Ein Tonträger wurde zu deiner Wantlist hinzugefügt (bei der nächsten Abfrage des Kontos erkannt).",
+        "es": "Se añadió un disco a tu lista de deseos (visto en la siguiente lectura de la cuenta)."
+      },
+      "fields": [
+        {
+          "key": "format",
+          "type": "select",
+          "label": {
+            "en": "Format",
+            "fr": "Format",
+            "de": "Format",
+            "es": "Formato"
+          },
+          "description": {
+            "en": "Only the records of this format (the first format of the release). Leave empty for any format.",
+            "fr": "Seulement les disques de ce format (le premier format de l’édition). Laissez vide pour tous les formats.",
+            "de": "Nur Tonträger in diesem Format (das erste Format der Veröffentlichung). Leer lassen für jedes Format.",
+            "es": "Solo los discos de este formato (el primer formato de la edición). Déjalo vacío para cualquier formato."
+          },
+          "options": [
+            {
+              "value": "Vinyl",
+              "label": {
+                "en": "Vinyl",
+                "fr": "Vinyle",
+                "de": "Vinyl",
+                "es": "Vinilo"
+              }
+            },
+            {
+              "value": "CD",
+              "label": {
+                "en": "CD",
+                "fr": "CD",
+                "de": "CD",
+                "es": "CD"
+              }
+            },
+            {
+              "value": "Cassette",
+              "label": {
+                "en": "Cassette",
+                "fr": "Cassette",
+                "de": "Kassette",
+                "es": "Casete"
+              }
+            },
+            {
+              "value": "File",
+              "label": {
+                "en": "File (digital)",
+                "fr": "Fichier (numérique)",
+                "de": "Datei (digital)",
+                "es": "Archivo (digital)"
+              }
+            },
+            {
+              "value": "CDr",
+              "label": {
+                "en": "CDr",
+                "fr": "CDr",
+                "de": "CDr",
+                "es": "CDr"
+              }
+            },
+            {
+              "value": "Box Set",
+              "label": {
+                "en": "Box set",
+                "fr": "Coffret",
+                "de": "Box-Set",
+                "es": "Caja recopilatoria"
+              }
+            },
+            {
+              "value": "DVD",
+              "label": {
+                "en": "DVD",
+                "fr": "DVD",
+                "de": "DVD",
+                "es": "DVD"
+              }
+            },
+            {
+              "value": "Blu-ray",
+              "label": {
+                "en": "Blu-ray",
+                "fr": "Blu-ray",
+                "de": "Blu-ray",
+                "es": "Blu-ray"
+              }
+            },
+            {
+              "value": "Shellac",
+              "label": {
+                "en": "Shellac (78 rpm)",
+                "fr": "Gomme-laque (78 tours)",
+                "de": "Schellack (78 U/min)",
+                "es": "Goma laca (78 rpm)"
+              }
+            },
+            {
+              "value": "Minidisc",
+              "label": {
+                "en": "MiniDisc",
+                "fr": "MiniDisc",
+                "de": "MiniDisc",
+                "es": "MiniDisc"
+              }
+            }
+          ],
+          "required": false
+        }
+      ],
+      "variables": [
+        {
+          "key": "release_id",
+          "type": "number",
+          "label": {
+            "en": "Release number",
+            "fr": "Numéro de l’édition",
+            "de": "Nummer der Veröffentlichung",
+            "es": "Número de la edición"
+          }
+        },
+        {
+          "key": "title",
+          "type": "string",
+          "label": {
+            "en": "Title",
+            "fr": "Titre",
+            "de": "Titel",
+            "es": "Título"
+          }
+        },
+        {
+          "key": "artist",
+          "type": "string",
+          "label": {
+            "en": "Artist",
+            "fr": "Artiste",
+            "de": "Künstler",
+            "es": "Artista"
+          }
+        },
+        {
+          "key": "year",
+          "type": "number",
+          "label": {
+            "en": "Year (0 if unknown)",
+            "fr": "Année (0 si inconnue)",
+            "de": "Jahr (0 wenn unbekannt)",
+            "es": "Año (0 si se desconoce)"
+          }
+        },
+        {
+          "key": "format",
+          "type": "string",
+          "label": {
+            "en": "Format",
+            "fr": "Format",
+            "de": "Format",
+            "es": "Formato"
+          }
+        },
+        {
+          "key": "formats",
+          "type": "string",
+          "label": {
+            "en": "Formats in detail",
+            "fr": "Formats en détail",
+            "de": "Formate im Detail",
+            "es": "Formatos en detalle"
+          }
+        },
+        {
+          "key": "label",
+          "type": "string",
+          "label": {
+            "en": "Label",
+            "fr": "Label",
+            "de": "Label",
+            "es": "Sello"
+          }
+        },
+        {
+          "key": "catno",
+          "type": "string",
+          "label": {
+            "en": "Catalog number",
+            "fr": "Numéro de catalogue",
+            "de": "Katalognummer",
+            "es": "Número de catálogo"
+          }
+        },
+        {
+          "key": "genre",
+          "type": "string",
+          "label": {
+            "en": "Genre",
+            "fr": "Genre",
+            "de": "Genre",
+            "es": "Género"
+          }
+        },
+        {
+          "key": "url",
+          "type": "string",
+          "label": {
+            "en": "Page on Discogs",
+            "fr": "Page sur Discogs",
+            "de": "Seite auf Discogs",
+            "es": "Página en Discogs"
+          }
+        },
+        {
+          "key": "cover_url",
+          "type": "string",
+          "label": {
+            "en": "Cover address",
+            "fr": "Adresse de la pochette",
+            "de": "Adresse des Covers",
+            "es": "Dirección de la portada"
+          }
+        }
+      ]
+    }
+  ],
+  "scene_actions": [
+    {
+      "key": "random_release",
+      "label": {
+        "en": "Discogs: a random record",
+        "fr": "Discogs : un disque au hasard",
+        "de": "Discogs: ein zufälliger Tonträger",
+        "es": "Discogs: un disco al azar"
+      },
+      "description": {
+        "en": "Draws a record of the collection, or of one folder, to know what to play.",
+        "fr": "Tire au sort un disque de la collection, ou d’un dossier, pour savoir quoi écouter.",
+        "de": "Zieht einen Tonträger aus der Sammlung oder einem Ordner, um zu wissen, was du auflegst.",
+        "es": "Sortea un disco de la colección, o de una carpeta, para saber qué escuchar."
+      },
+      "timeout_seconds": 30,
+      "fields": [
+        {
+          "key": "folder",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Folder",
+            "fr": "Dossier",
+            "de": "Ordner",
+            "es": "Carpeta"
+          },
+          "description": {
+            "en": "A folder device of the integration. Leave empty for the whole collection.",
+            "fr": "Un appareil dossier de l’intégration. Laissez vide pour toute la collection.",
+            "de": "Ein Ordner-Gerät der Integration. Leer lassen für die ganze Sammlung.",
+            "es": "Un dispositivo carpeta de la integración. Déjalo vacío para toda la colección."
+          },
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "key": "found",
+          "type": "boolean",
+          "label": {
+            "en": "Found",
+            "fr": "Trouvé",
+            "de": "Gefunden",
+            "es": "Encontrado"
+          }
+        },
+        {
+          "key": "release_id",
+          "type": "number",
+          "label": {
+            "en": "Release number",
+            "fr": "Numéro de l’édition",
+            "de": "Nummer der Veröffentlichung",
+            "es": "Número de la edición"
+          }
+        },
+        {
+          "key": "title",
+          "type": "string",
+          "label": {
+            "en": "Title",
+            "fr": "Titre",
+            "de": "Titel",
+            "es": "Título"
+          }
+        },
+        {
+          "key": "artist",
+          "type": "string",
+          "label": {
+            "en": "Artist",
+            "fr": "Artiste",
+            "de": "Künstler",
+            "es": "Artista"
+          }
+        },
+        {
+          "key": "year",
+          "type": "number",
+          "label": {
+            "en": "Year (0 if unknown)",
+            "fr": "Année (0 si inconnue)",
+            "de": "Jahr (0 wenn unbekannt)",
+            "es": "Año (0 si se desconoce)"
+          }
+        },
+        {
+          "key": "format",
+          "type": "string",
+          "label": {
+            "en": "Format",
+            "fr": "Format",
+            "de": "Format",
+            "es": "Formato"
+          }
+        },
+        {
+          "key": "label",
+          "type": "string",
+          "label": {
+            "en": "Label",
+            "fr": "Label",
+            "de": "Label",
+            "es": "Sello"
+          }
+        },
+        {
+          "key": "url",
+          "type": "string",
+          "label": {
+            "en": "Page on Discogs",
+            "fr": "Page sur Discogs",
+            "de": "Seite auf Discogs",
+            "es": "Página en Discogs"
+          }
+        },
+        {
+          "key": "folder_name",
+          "type": "string",
+          "label": {
+            "en": "Folder",
+            "fr": "Dossier",
+            "de": "Ordner",
+            "es": "Carpeta"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Sentence for a message",
+            "fr": "Phrase pour un message",
+            "de": "Satz für eine Nachricht",
+            "es": "Frase para un mensaje"
+          }
+        }
+      ]
+    },
+    {
+      "key": "search_barcode",
+      "label": {
+        "en": "Discogs: search a barcode",
+        "fr": "Discogs : chercher un code-barres",
+        "de": "Discogs: Strichcode suchen",
+        "es": "Discogs: buscar un código de barras"
+      },
+      "description": {
+        "en": "The release a barcode (EAN, UPC) is printed on, the pressing most owned first.",
+        "fr": "L’édition qui porte un code-barres (EAN, UPC), le pressage le plus possédé en premier.",
+        "de": "Die Veröffentlichung mit einem Strichcode (EAN, UPC), die meistbesessene Pressung zuerst.",
+        "es": "La edición que lleva un código de barras (EAN, UPC), la edición más poseída primero."
+      },
+      "timeout_seconds": 30,
+      "fields": [
+        {
+          "key": "barcode",
+          "type": "string",
+          "label": {
+            "en": "Barcode",
+            "fr": "Code-barres",
+            "de": "Strichcode",
+            "es": "Código de barras"
+          },
+          "description": {
+            "en": "The digits under the bars, spaces allowed. Scene variables are accepted.",
+            "fr": "Les chiffres sous les barres, espaces permis. Les variables de scène sont acceptées.",
+            "de": "Die Ziffern unter den Strichen, Leerzeichen erlaubt. Szenenvariablen sind erlaubt.",
+            "es": "Las cifras bajo las barras, se permiten espacios. Se aceptan variables de escena."
+          },
+          "placeholder": {
+            "en": "5099749534728",
+            "fr": "5099749534728",
+            "de": "5099749534728",
+            "es": "5099749534728"
+          },
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "key": "found",
+          "type": "boolean",
+          "label": {
+            "en": "Found",
+            "fr": "Trouvé",
+            "de": "Gefunden",
+            "es": "Encontrado"
+          }
+        },
+        {
+          "key": "matches",
+          "type": "number",
+          "label": {
+            "en": "Pressings found",
+            "fr": "Pressages trouvés",
+            "de": "Gefundene Pressungen",
+            "es": "Ediciones encontradas"
+          }
+        },
+        {
+          "key": "release_id",
+          "type": "number",
+          "label": {
+            "en": "Release number",
+            "fr": "Numéro de l’édition",
+            "de": "Nummer der Veröffentlichung",
+            "es": "Número de la edición"
+          }
+        },
+        {
+          "key": "title",
+          "type": "string",
+          "label": {
+            "en": "Title",
+            "fr": "Titre",
+            "de": "Titel",
+            "es": "Título"
+          }
+        },
+        {
+          "key": "artist",
+          "type": "string",
+          "label": {
+            "en": "Artist",
+            "fr": "Artiste",
+            "de": "Künstler",
+            "es": "Artista"
+          }
+        },
+        {
+          "key": "year",
+          "type": "number",
+          "label": {
+            "en": "Year (0 if unknown)",
+            "fr": "Année (0 si inconnue)",
+            "de": "Jahr (0 wenn unbekannt)",
+            "es": "Año (0 si se desconoce)"
+          }
+        },
+        {
+          "key": "format",
+          "type": "string",
+          "label": {
+            "en": "Format",
+            "fr": "Format",
+            "de": "Format",
+            "es": "Formato"
+          }
+        },
+        {
+          "key": "label",
+          "type": "string",
+          "label": {
+            "en": "Label",
+            "fr": "Label",
+            "de": "Label",
+            "es": "Sello"
+          }
+        },
+        {
+          "key": "url",
+          "type": "string",
+          "label": {
+            "en": "Page on Discogs",
+            "fr": "Page sur Discogs",
+            "de": "Seite auf Discogs",
+            "es": "Página en Discogs"
+          }
+        },
+        {
+          "key": "country",
+          "type": "string",
+          "label": {
+            "en": "Country",
+            "fr": "Pays",
+            "de": "Land",
+            "es": "País"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Sentence for a message",
+            "fr": "Phrase pour un message",
+            "de": "Satz für eine Nachricht",
+            "es": "Frase para un mensaje"
+          }
+        }
+      ]
+    },
+    {
+      "key": "add_to_collection",
+      "label": {
+        "en": "Discogs: add to the collection",
+        "fr": "Discogs : ajouter à la collection",
+        "de": "Discogs: zur Sammlung hinzufügen",
+        "es": "Discogs: añadir a la colección"
+      },
+      "description": {
+        "en": "Adds a release to a folder of the collection, unless a copy is already there.",
+        "fr": "Ajoute une édition dans un dossier de la collection, sauf si un exemplaire y est déjà.",
+        "de": "Fügt eine Veröffentlichung einem Ordner der Sammlung hinzu, außer ein Exemplar ist schon da.",
+        "es": "Añade una edición a una carpeta de la colección, salvo si ya hay una copia."
+      },
+      "timeout_seconds": 60,
+      "fields": [
+        {
+          "key": "release",
+          "type": "string",
+          "label": {
+            "en": "Release",
+            "fr": "Édition",
+            "de": "Veröffentlichung",
+            "es": "Edición"
+          },
+          "description": {
+            "en": "The number of the release on Discogs (\"644773\", \"r644773\") or the address of its page. Scene variables are accepted.",
+            "fr": "Le numéro de l’édition sur Discogs (« 644773 », « r644773 ») ou l’adresse de sa page. Les variables de scène sont acceptées.",
+            "de": "Die Nummer der Veröffentlichung auf Discogs („644773“, „r644773“) oder die Adresse ihrer Seite. Szenenvariablen sind erlaubt.",
+            "es": "El número de la edición en Discogs («644773», «r644773») o la dirección de su página. Se aceptan variables de escena."
+          },
+          "placeholder": {
+            "en": "644773",
+            "fr": "644773",
+            "de": "644773",
+            "es": "644773"
+          },
+          "required": true
+        },
+        {
+          "key": "folder",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Folder",
+            "fr": "Dossier",
+            "de": "Ordner",
+            "es": "Carpeta"
+          },
+          "description": {
+            "en": "A folder device of the integration. Leave empty for \"Uncategorized\".",
+            "fr": "Un appareil dossier de l’intégration. Laissez vide pour « Uncategorized ».",
+            "de": "Ein Ordner-Gerät der Integration. Leer lassen für „Uncategorized“.",
+            "es": "Un dispositivo carpeta de la integración. Déjalo vacío para «Uncategorized»."
+          },
+          "required": false
+        },
+        {
+          "key": "allow_duplicate",
+          "type": "boolean",
+          "label": {
+            "en": "Add another copy",
+            "fr": "Ajouter un autre exemplaire",
+            "de": "Weiteres Exemplar hinzufügen",
+            "es": "Añadir otra copia"
+          },
+          "description": {
+            "en": "Add it even when the collection already holds a copy.",
+            "fr": "L’ajouter même si la collection en a déjà un exemplaire.",
+            "de": "Auch hinzufügen, wenn die Sammlung schon ein Exemplar hat.",
+            "es": "Añadirla aunque la colección ya tenga una copia."
+          },
+          "default": false,
+          "required": false
+        }
+      ],
+      "outputs": [
+        {
+          "key": "added",
+          "type": "boolean",
+          "label": {
+            "en": "Added",
+            "fr": "Ajouté",
+            "de": "Hinzugefügt",
+            "es": "Añadido"
+          }
+        },
+        {
+          "key": "already_owned",
+          "type": "boolean",
+          "label": {
+            "en": "Already in the collection",
+            "fr": "Déjà dans la collection",
+            "de": "Schon in der Sammlung",
+            "es": "Ya en la colección"
+          }
+        },
+        {
+          "key": "copies",
+          "type": "number",
+          "label": {
+            "en": "Copies in the collection",
+            "fr": "Exemplaires dans la collection",
+            "de": "Exemplare in der Sammlung",
+            "es": "Copias en la colección"
+          }
+        },
+        {
+          "key": "release_id",
+          "type": "number",
+          "label": {
+            "en": "Release number",
+            "fr": "Numéro de l’édition",
+            "de": "Nummer der Veröffentlichung",
+            "es": "Número de la edición"
+          }
+        },
+        {
+          "key": "title",
+          "type": "string",
+          "label": {
+            "en": "Title",
+            "fr": "Titre",
+            "de": "Titel",
+            "es": "Título"
+          }
+        },
+        {
+          "key": "artist",
+          "type": "string",
+          "label": {
+            "en": "Artist",
+            "fr": "Artiste",
+            "de": "Künstler",
+            "es": "Artista"
+          }
+        },
+        {
+          "key": "folder_name",
+          "type": "string",
+          "label": {
+            "en": "Folder",
+            "fr": "Dossier",
+            "de": "Ordner",
+            "es": "Carpeta"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Sentence for a message",
+            "fr": "Phrase pour un message",
+            "de": "Satz für eine Nachricht",
+            "es": "Frase para un mensaje"
+          }
+        }
+      ]
+    },
+    {
+      "key": "add_to_wantlist",
+      "label": {
+        "en": "Discogs: add to the wantlist",
+        "fr": "Discogs : ajouter à la wantlist",
+        "de": "Discogs: zur Wantlist hinzufügen",
+        "es": "Discogs: añadir a la lista de deseos"
+      },
+      "description": {
+        "en": "Adds a release to the wantlist (nothing changes when it is already there).",
+        "fr": "Ajoute une édition à la wantlist (rien ne change si elle y est déjà).",
+        "de": "Fügt eine Veröffentlichung zur Wantlist hinzu (nichts ändert sich, wenn sie schon dort steht).",
+        "es": "Añade una edición a la lista de deseos (nada cambia si ya está)."
+      },
+      "timeout_seconds": 30,
+      "fields": [
+        {
+          "key": "release",
+          "type": "string",
+          "label": {
+            "en": "Release",
+            "fr": "Édition",
+            "de": "Veröffentlichung",
+            "es": "Edición"
+          },
+          "description": {
+            "en": "The number of the release on Discogs (\"644773\", \"r644773\") or the address of its page. Scene variables are accepted.",
+            "fr": "Le numéro de l’édition sur Discogs (« 644773 », « r644773 ») ou l’adresse de sa page. Les variables de scène sont acceptées.",
+            "de": "Die Nummer der Veröffentlichung auf Discogs („644773“, „r644773“) oder die Adresse ihrer Seite. Szenenvariablen sind erlaubt.",
+            "es": "El número de la edición en Discogs («644773», «r644773») o la dirección de su página. Se aceptan variables de escena."
+          },
+          "placeholder": {
+            "en": "644773",
+            "fr": "644773",
+            "de": "644773",
+            "es": "644773"
+          },
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "key": "release_id",
+          "type": "number",
+          "label": {
+            "en": "Release number",
+            "fr": "Numéro de l’édition",
+            "de": "Nummer der Veröffentlichung",
+            "es": "Número de la edición"
+          }
+        },
+        {
+          "key": "title",
+          "type": "string",
+          "label": {
+            "en": "Title",
+            "fr": "Titre",
+            "de": "Titel",
+            "es": "Título"
+          }
+        },
+        {
+          "key": "artist",
+          "type": "string",
+          "label": {
+            "en": "Artist",
+            "fr": "Artiste",
+            "de": "Künstler",
+            "es": "Artista"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Sentence for a message",
+            "fr": "Phrase pour un message",
+            "de": "Satz für eine Nachricht",
+            "es": "Frase para un mensaje"
+          }
+        }
+      ]
+    },
+    {
+      "key": "remove_from_wantlist",
+      "label": {
+        "en": "Discogs: remove from the wantlist",
+        "fr": "Discogs : retirer de la wantlist",
+        "de": "Discogs: von der Wantlist entfernen",
+        "es": "Discogs: quitar de la lista de deseos"
+      },
+      "description": {
+        "en": "Removes a release from the wantlist, for instance once it is bought.",
+        "fr": "Retire une édition de la wantlist, par exemple une fois achetée.",
+        "de": "Entfernt eine Veröffentlichung von der Wantlist, etwa nach dem Kauf.",
+        "es": "Quita una edición de la lista de deseos, por ejemplo una vez comprada."
+      },
+      "timeout_seconds": 30,
+      "fields": [
+        {
+          "key": "release",
+          "type": "string",
+          "label": {
+            "en": "Release",
+            "fr": "Édition",
+            "de": "Veröffentlichung",
+            "es": "Edición"
+          },
+          "description": {
+            "en": "The number of the release on Discogs (\"644773\", \"r644773\") or the address of its page. Scene variables are accepted.",
+            "fr": "Le numéro de l’édition sur Discogs (« 644773 », « r644773 ») ou l’adresse de sa page. Les variables de scène sont acceptées.",
+            "de": "Die Nummer der Veröffentlichung auf Discogs („644773“, „r644773“) oder die Adresse ihrer Seite. Szenenvariablen sind erlaubt.",
+            "es": "El número de la edición en Discogs («644773», «r644773») o la dirección de su página. Se aceptan variables de escena."
+          },
+          "placeholder": {
+            "en": "644773",
+            "fr": "644773",
+            "de": "644773",
+            "es": "644773"
+          },
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "key": "removed",
+          "type": "boolean",
+          "label": {
+            "en": "Removed",
+            "fr": "Retiré",
+            "de": "Entfernt",
+            "es": "Quitado"
+          }
+        },
+        {
+          "key": "release_id",
+          "type": "number",
+          "label": {
+            "en": "Release number",
+            "fr": "Numéro de l’édition",
+            "de": "Nummer der Veröffentlichung",
+            "es": "Número de la edición"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Sentence for a message",
+            "fr": "Phrase pour un message",
+            "de": "Satz für eine Nachricht",
+            "es": "Frase para un mensaje"
+          }
+        }
+      ]
+    },
+    {
+      "key": "get_price",
+      "label": {
+        "en": "Discogs: price of a record",
+        "fr": "Discogs : prix d’un disque",
+        "de": "Discogs: Preis eines Tonträgers",
+        "es": "Discogs: precio de un disco"
+      },
+      "description": {
+        "en": "The copies of a release for sale on the marketplace and the lowest price.",
+        "fr": "Les exemplaires d’une édition en vente sur le marché et le prix le plus bas.",
+        "de": "Die Exemplare einer Veröffentlichung im Marktplatz und der niedrigste Preis.",
+        "es": "Las copias de una edición en venta en el mercado y el precio más bajo."
+      },
+      "timeout_seconds": 30,
+      "fields": [
+        {
+          "key": "release",
+          "type": "string",
+          "label": {
+            "en": "Release",
+            "fr": "Édition",
+            "de": "Veröffentlichung",
+            "es": "Edición"
+          },
+          "description": {
+            "en": "The number of the release on Discogs (\"644773\", \"r644773\") or the address of its page. Scene variables are accepted.",
+            "fr": "Le numéro de l’édition sur Discogs (« 644773 », « r644773 ») ou l’adresse de sa page. Les variables de scène sont acceptées.",
+            "de": "Die Nummer der Veröffentlichung auf Discogs („644773“, „r644773“) oder die Adresse ihrer Seite. Szenenvariablen sind erlaubt.",
+            "es": "El número de la edición en Discogs («644773», «r644773») o la dirección de su página. Se aceptan variables de escena."
+          },
+          "placeholder": {
+            "en": "644773",
+            "fr": "644773",
+            "de": "644773",
+            "es": "644773"
+          },
+          "required": true
+        }
+      ],
+      "outputs": [
+        {
+          "key": "for_sale",
+          "type": "number",
+          "label": {
+            "en": "Copies for sale",
+            "fr": "Exemplaires en vente",
+            "de": "Exemplare im Verkauf",
+            "es": "Copias en venta"
+          }
+        },
+        {
+          "key": "lowest_price",
+          "type": "number",
+          "label": {
+            "en": "Lowest price (-1 if none)",
+            "fr": "Prix le plus bas (-1 si aucun)",
+            "de": "Niedrigster Preis (-1 wenn keiner)",
+            "es": "Precio más bajo (-1 si no hay)"
+          }
+        },
+        {
+          "key": "currency",
+          "type": "string",
+          "label": {
+            "en": "Currency",
+            "fr": "Devise",
+            "de": "Währung",
+            "es": "Moneda"
+          }
+        },
+        {
+          "key": "release_id",
+          "type": "number",
+          "label": {
+            "en": "Release number",
+            "fr": "Numéro de l’édition",
+            "de": "Nummer der Veröffentlichung",
+            "es": "Número de la edición"
+          }
+        },
+        {
+          "key": "title",
+          "type": "string",
+          "label": {
+            "en": "Title",
+            "fr": "Titre",
+            "de": "Titel",
+            "es": "Título"
+          }
+        },
+        {
+          "key": "artist",
+          "type": "string",
+          "label": {
+            "en": "Artist",
+            "fr": "Artiste",
+            "de": "Künstler",
+            "es": "Artista"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Sentence for a message",
+            "fr": "Phrase pour un message",
+            "de": "Satz für eine Nachricht",
+            "es": "Frase para un mensaje"
+          }
+        }
+      ]
+    },
+    {
+      "key": "get_collection",
+      "label": {
+        "en": "Discogs: my collection",
+        "fr": "Discogs : ma collection",
+        "de": "Discogs: meine Sammlung",
+        "es": "Discogs: mi colección"
+      },
+      "description": {
+        "en": "The counts and the value of the collection, and a sentence for a message.",
+        "fr": "Les nombres et la valeur de la collection, et une phrase pour un message.",
+        "de": "Die Anzahlen und der Wert der Sammlung, und ein Satz für eine Nachricht.",
+        "es": "Los números y el valor de la colección, y una frase para un mensaje."
+      },
+      "timeout_seconds": 30,
+      "outputs": [
+        {
+          "key": "records",
+          "type": "number",
+          "label": {
+            "en": "Records in the collection",
+            "fr": "Disques dans la collection",
+            "de": "Tonträger in der Sammlung",
+            "es": "Discos en la colección"
+          }
+        },
+        {
+          "key": "wantlist",
+          "type": "number",
+          "label": {
+            "en": "Records in the wantlist",
+            "fr": "Disques dans la wantlist",
+            "de": "Tonträger auf der Wantlist",
+            "es": "Discos en la lista de deseos"
+          }
+        },
+        {
+          "key": "for_sale",
+          "type": "number",
+          "label": {
+            "en": "Copies for sale",
+            "fr": "Exemplaires en vente",
+            "de": "Exemplare im Verkauf",
+            "es": "Copias en venta"
+          }
+        },
+        {
+          "key": "value_min",
+          "type": "number",
+          "label": {
+            "en": "Minimum value (-1 if unknown)",
+            "fr": "Valeur minimale (-1 si inconnue)",
+            "de": "Mindestwert (-1 wenn unbekannt)",
+            "es": "Valor mínimo (-1 si se desconoce)"
+          }
+        },
+        {
+          "key": "value_median",
+          "type": "number",
+          "label": {
+            "en": "Median value (-1 if unknown)",
+            "fr": "Valeur médiane (-1 si inconnue)",
+            "de": "Medianwert (-1 wenn unbekannt)",
+            "es": "Valor mediano (-1 si se desconoce)"
+          }
+        },
+        {
+          "key": "value_max",
+          "type": "number",
+          "label": {
+            "en": "Maximum value (-1 if unknown)",
+            "fr": "Valeur maximale (-1 si inconnue)",
+            "de": "Höchstwert (-1 wenn unbekannt)",
+            "es": "Valor máximo (-1 si se desconoce)"
+          }
+        },
+        {
+          "key": "currency",
+          "type": "string",
+          "label": {
+            "en": "Currency",
+            "fr": "Devise",
+            "de": "Währung",
+            "es": "Moneda"
+          }
+        },
+        {
+          "key": "last_added",
+          "type": "string",
+          "label": {
+            "en": "Last record added",
+            "fr": "Dernier disque ajouté",
+            "de": "Zuletzt hinzugefügter Tonträger",
+            "es": "Último disco añadido"
+          }
+        },
+        {
+          "key": "summary",
+          "type": "string",
+          "label": {
+            "en": "Sentence for a message",
+            "fr": "Phrase pour un message",
+            "de": "Satz für eine Nachricht",
+            "es": "Frase para un mensaje"
+          }
+        }
+      ]
+    }
+  ],
+  "widgets": [
+    {
+      "key": "collection",
+      "label": {
+        "en": "Discogs collection",
+        "fr": "Collection Discogs",
+        "de": "Discogs-Sammlung",
+        "es": "Colección Discogs"
+      },
+      "description": {
+        "en": "Records, wantlist, value of the collection and records for sale.",
+        "fr": "Disques, wantlist, valeur de la collection et disques en vente.",
+        "de": "Tonträger, Wantlist, Wert der Sammlung und Tonträger im Verkauf.",
+        "es": "Discos, lista de deseos, valor de la colección y discos en venta."
+      },
+      "icon": "disc"
+    },
+    {
+      "key": "recent",
+      "label": {
+        "en": "Last records added",
+        "fr": "Derniers disques ajoutés",
+        "de": "Zuletzt hinzugefügt",
+        "es": "Últimos discos añadidos"
+      },
+      "description": {
+        "en": "The last records added to the collection or to the wantlist, with their covers.",
+        "fr": "Les derniers disques ajoutés à la collection ou à la wantlist, avec leurs pochettes.",
+        "de": "Die zuletzt hinzugefügten Tonträger der Sammlung oder der Wantlist, mit Cover.",
+        "es": "Los últimos discos añadidos a la colección o a la lista de deseos, con sus portadas."
+      },
+      "icon": "list",
+      "settings": [
+        {
+          "key": "list",
+          "type": "select",
+          "label": {
+            "en": "List",
+            "fr": "Liste",
+            "de": "Liste",
+            "es": "Lista"
+          },
+          "options": [
+            {
+              "value": "collection",
+              "label": {
+                "en": "Collection",
+                "fr": "Collection",
+                "de": "Sammlung",
+                "es": "Colección"
+              }
+            },
+            {
+              "value": "wantlist",
+              "label": {
+                "en": "Wantlist",
+                "fr": "Wantlist",
+                "de": "Wantlist",
+                "es": "Lista de deseos"
+              }
+            }
+          ],
+          "default": "collection",
+          "required": false
+        },
+        {
+          "key": "count",
+          "type": "number",
+          "label": {
+            "en": "Number of records",
+            "fr": "Nombre de disques",
+            "de": "Anzahl der Tonträger",
+            "es": "Número de discos"
+          },
+          "description": {
+            "en": "From 1 to 12 (8 at most as a list).",
+            "fr": "De 1 à 12 (8 au plus en liste).",
+            "de": "Von 1 bis 12 (höchstens 8 als Liste).",
+            "es": "De 1 a 12 (8 como máximo en lista)."
+          },
+          "min": 1,
+          "max": 12,
+          "default": 6,
+          "required": false
+        },
+        {
+          "key": "display",
+          "type": "select",
+          "label": {
+            "en": "Display",
+            "fr": "Affichage",
+            "de": "Anzeige",
+            "es": "Visualización"
+          },
+          "options": [
+            {
+              "value": "grid",
+              "label": {
+                "en": "Covers",
+                "fr": "Pochettes",
+                "de": "Cover",
+                "es": "Portadas"
+              }
+            },
+            {
+              "value": "list",
+              "label": {
+                "en": "List",
+                "fr": "Liste",
+                "de": "Liste",
+                "es": "Lista"
+              }
+            }
+          ],
+          "default": "grid",
+          "required": false
+        }
+      ]
+    },
+    {
+      "key": "random",
+      "label": {
+        "en": "Random record",
+        "fr": "Disque au hasard",
+        "de": "Zufälliger Tonträger",
+        "es": "Disco al azar"
+      },
+      "description": {
+        "en": "A record of your collection drawn at random, with its cover and a button to draw another one.",
+        "fr": "Un disque de votre collection tiré au sort, avec sa pochette et un bouton pour en tirer un autre.",
+        "de": "Ein zufällig gezogener Tonträger deiner Sammlung, mit Cover und Knopf für einen anderen.",
+        "es": "Un disco de tu colección sorteado al azar, con su portada y un botón para sortear otro."
+      },
+      "icon": "shuffle",
+      "settings": [
+        {
+          "key": "folder",
+          "type": "select",
+          "source": "devices",
+          "label": {
+            "en": "Folder",
+            "fr": "Dossier",
+            "de": "Ordner",
+            "es": "Carpeta"
+          },
+          "description": {
+            "en": "A folder device of the integration. Leave empty for the whole collection.",
+            "fr": "Un appareil dossier de l’intégration. Laissez vide pour toute la collection.",
+            "de": "Ein Ordner-Gerät der Integration. Leer lassen für die ganze Sammlung.",
+            "es": "Un dispositivo carpeta de la integración. Déjalo vacío para toda la colección."
+          },
+          "required": false
+        }
+      ]
+    }
+  ]
+}

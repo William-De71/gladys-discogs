@@ -1,0 +1,28 @@
+{
+  "folders": [
+    {
+      "id": 0,
+      "name": "All",
+      "count": 6,
+      "resource_url": "https://api.discogs.com/users/gladys_tester/collection/folders/0"
+    },
+    {
+      "id": 1,
+      "name": "Uncategorized",
+      "count": 2,
+      "resource_url": "https://api.discogs.com/users/gladys_tester/collection/folders/1"
+    },
+    {
+      "id": 3,
+      "name": "Vinyles",
+      "count": 3,
+      "resource_url": "https://api.discogs.com/users/gladys_tester/collection/folders/3"
+    },
+    {
+      "id": 4,
+      "name": "CD",
+      "count": 1,
+      "resource_url": "https://api.discogs.com/users/gladys_tester/collection/folders/4"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="534" viewBox="0 0 800 534">
+  <!-- Cover of the Discogs integration for Gladys Assistant (illustration, not
+       the logo of Discogs). A shelf of records: a crate of sleeves, one record
+       out of its sleeve on a turntable, a small card with the counts of the
+       collection. Built into cover.jpg by scripts/build-cover.sh. -->
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1d1f24"/>
+      <stop offset="1" stop-color="#33363d"/>
+    </linearGradient>
+    <radialGradient id="vinyl" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#2b2b2b"/>
+      <stop offset="0.35" stop-color="#111111"/>
+      <stop offset="1" stop-color="#050505"/>
+    </radialGradient>
+    <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#a0703f"/>
+      <stop offset="1" stop-color="#6e4826"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="534" fill="url(#wall)"/>
+
+  <!-- the shelf -->
+  <rect x="0" y="430" width="800" height="104" fill="url(#wood)"/>
+  <rect x="0" y="430" width="800" height="8" fill="#c08a52"/>
+
+  <!-- a crate of sleeves -->
+  <g>
+    <rect x="40" y="250" width="56" height="180" rx="3" fill="#e76f51"/>
+    <rect x="74" y="238" width="56" height="192" rx="3" fill="#2a9d8f" transform="rotate(-4 102 430)"/>
+    <rect x="112" y="244" width="56" height="186" rx="3" fill="#e9c46a" transform="rotate(-8 140 430)"/>
+    <rect x="150" y="252" width="56" height="178" rx="3" fill="#264653" transform="rotate(-12 178 430)"/>
+    <rect x="188" y="262" width="56" height="168" rx="3" fill="#f4a261" transform="rotate(-16 216 430)"/>
+    <g opacity="0.35" fill="#ffffff">
+      <circle cx="68" cy="320" r="16"/>
+      <rect x="54" y="380" width="30" height="5"/>
+    </g>
+    <rect x="30" y="360" width="250" height="70" rx="6" fill="#8b5a2b"/>
+    <rect x="30" y="360" width="250" height="10" rx="5" fill="#a86c35"/>
+    <rect x="135" y="386" width="40" height="12" rx="6" fill="#5c3a1a"/>
+  </g>
+
+  <!-- the turntable and its record -->
+  <g transform="translate(330 250)">
+    <rect x="0" y="0" width="300" height="180" rx="14" fill="#d9d4cc"/>
+    <rect x="0" y="150" width="300" height="30" rx="10" fill="#bdb6ab"/>
+    <circle cx="125" cy="88" r="78" fill="url(#vinyl)"/>
+    <g fill="none" stroke="#2c2c2c" stroke-width="1.5">
+      <circle cx="125" cy="88" r="70"/>
+      <circle cx="125" cy="88" r="60"/>
+      <circle cx="125" cy="88" r="50"/>
+      <circle cx="125" cy="88" r="40"/>
+    </g>
+    <circle cx="125" cy="88" r="24" fill="#e76f51"/>
+    <circle cx="125" cy="88" r="4" fill="#1d1f24"/>
+    <path d="M60 50 A78 78 0 0 1 112 12" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.18"/>
+    <!-- tonearm -->
+    <circle cx="258" cy="38" r="14" fill="#8d8a84"/>
+    <path d="M258 38 L248 118 L198 132" fill="none" stroke="#5f5c57" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="186" y="124" width="18" height="12" rx="3" fill="#3a3834" transform="rotate(-16 195 130)"/>
+    <circle cx="272" cy="150" r="6" fill="#2a9d8f"/>
+  </g>
+
+  <!-- a card with the counts of the collection -->
+  <g transform="translate(652 222)">
+    <rect x="0" y="0" width="124" height="150" rx="12" fill="#ffffff"/>
+    <text x="62" y="36" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#6c757d">records</text>
+    <text x="62" y="76" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="34" font-weight="bold" fill="#264653">1 234</text>
+    <rect x="18" y="96" width="88" height="2" fill="#e9ecef"/>
+    <text x="62" y="126" text-anchor="middle" font-family="DejaVu Sans, Arial, sans-serif" font-size="14" fill="#2a9d8f">♥ 56 wanted</text>
+  </g>
+
+  <!-- title -->
+  <g font-family="DejaVu Sans, Arial, sans-serif">
+    <text x="40" y="96" font-size="64" font-weight="bold" fill="#ffffff">Discogs</text>
+    <text x="42" y="140" font-size="26" fill="#cfd3da">for Gladys Assistant</text>
+    <text x="42" y="182" font-size="18" fill="#9aa1ab">collection · wantlist · value · covers</text>
+  </g>
+</svg>

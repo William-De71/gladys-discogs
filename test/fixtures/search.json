@@ -1,0 +1,112 @@
+{
+  "pagination": {
+    "page": 1,
+    "pages": 4,
+    "per_page": 3,
+    "items": 12,
+    "urls": {
+      "last": "https://api.discogs.com/database/search?barcode=5099749534728&type=release&per_page=3&page=4",
+      "next": "https://api.discogs.com/database/search?barcode=5099749534728&type=release&per_page=3&page=2"
+    }
+  },
+  "results": [
+    {
+      "country": "UK",
+      "genre": ["Rock", "Blues"],
+      "format": ["CDr", "Album"],
+      "style": ["Rhythm & Blues", "Psychedelic Rock"],
+      "id": 8720154,
+      "label": ["Reel Sound Records", "Reel Sound Records"],
+      "type": "release",
+      "barcode": ["5099749534728"],
+      "master_id": 0,
+      "master_url": null,
+      "uri": "/release/8720154-The-Fabulous-Ducks-Poultry-in-Motion",
+      "catno": "FDRR001",
+      "title": "The Fabulous Ducks - Poultry in Motion",
+      "thumb": "",
+      "cover_image": "",
+      "resource_url": "https://api.discogs.com/releases/8720154",
+      "community": {
+        "want": 5,
+        "have": 5
+      },
+      "format_quantity": 1,
+      "formats": [
+        {
+          "name": "CDr",
+          "qty": "1",
+          "text": "Live",
+          "descriptions": ["Album"]
+        }
+      ]
+    },
+    {
+      "country": "Japan",
+      "year": "2012",
+      "format": ["CD", "Album", "Reissue", "Remastered"],
+      "label": [
+        "Columbia",
+        "Sony Music Entertainment (UK) Ltd.",
+        "Sony Music Entertainment (UK) Ltd."
+      ],
+      "type": "release",
+      "genre": ["Rock"],
+      "style": ["Punk"],
+      "id": 32747301,
+      "barcode": ["5099749534728", "4571222046214"],
+      "master_id": 19382,
+      "master_url": "https://api.discogs.com/masters/19382",
+      "uri": "/release/32747301-The-Clash-London-Calling",
+      "catno": "495347 2",
+      "title": "The Clash - London Calling",
+      "thumb": "",
+      "cover_image": "",
+      "resource_url": "https://api.discogs.com/releases/32747301",
+      "community": {
+        "want": 83,
+        "have": 8
+      },
+      "format_quantity": 1,
+      "formats": [
+        {
+          "name": "CD",
+          "qty": "1",
+          "descriptions": ["Album", "Reissue", "Remastered"]
+        }
+      ]
+    },
+    {
+      "country": "China",
+      "year": "1999",
+      "format": ["CD", "Album", "Unofficial Release"],
+      "label": ["Columbia", "Columbia", "Unknown (CM)"],
+      "type": "release",
+      "genre": ["Rock"],
+      "style": ["Punk", "Rock & Roll"],
+      "id": 4444523,
+      "barcode": ["5 09974 953472 8", "CM-1330"],
+      "master_id": 19382,
+      "master_url": "https://api.discogs.com/masters/19382",
+      "uri": "/release/4444523-The-Clash-London-Calling",
+      "catno": "495347 2",
+      "title": "The Clash - London Calling",
+      "thumb": "",
+      "cover_image": "",
+      "resource_url": "https://api.discogs.com/releases/4444523",
+      "community": {
+        "want": 583,
+        "have": 254
+      },
+      "format_quantity": 1,
+      "formats": [
+        {
+          "name": "CD",
+          "qty": "1",
+          "text": "Slipcase",
+          "descriptions": ["Album", "Unofficial Release"]
+        }
+      ]
+    }
+  ]
+}

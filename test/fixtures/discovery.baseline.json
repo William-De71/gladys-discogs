@@ -1,0 +1,717 @@
+{
+  "devices": {
+    "account": {
+      "external_id": "ext:discogs:account:1234567",
+      "should_poll": false,
+      "params": ["DISCOGS_USERNAME"],
+      "features": [
+        {
+          "external_id": "ext:discogs:account:1234567:collection",
+          "category": "counter-sensor",
+          "type": "integer",
+          "min": 0,
+          "max": 10000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:wantlist",
+          "category": "counter-sensor",
+          "type": "integer",
+          "min": 0,
+          "max": 10000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:for_sale",
+          "category": "counter-sensor",
+          "type": "integer",
+          "min": 0,
+          "max": 10000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:value_min",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "euro",
+          "min": 0,
+          "max": 1000000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:value_median",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "euro",
+          "min": 0,
+          "max": 1000000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:value_max",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "euro",
+          "min": 0,
+          "max": 1000000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:last_added",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0,
+          "read_only": true,
+          "has_feedback": false
+        }
+      ]
+    },
+    "accountUsd": {
+      "external_id": "ext:discogs:account:1234567",
+      "should_poll": false,
+      "params": ["DISCOGS_USERNAME"],
+      "features": [
+        {
+          "external_id": "ext:discogs:account:1234567:collection",
+          "category": "counter-sensor",
+          "type": "integer",
+          "min": 0,
+          "max": 10000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:wantlist",
+          "category": "counter-sensor",
+          "type": "integer",
+          "min": 0,
+          "max": 10000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:for_sale",
+          "category": "counter-sensor",
+          "type": "integer",
+          "min": 0,
+          "max": 10000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:value_min",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "dollar",
+          "min": 0,
+          "max": 1000000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:value_median",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "dollar",
+          "min": 0,
+          "max": 1000000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:value_max",
+          "category": "currency",
+          "type": "decimal",
+          "unit": "dollar",
+          "min": 0,
+          "max": 1000000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:last_added",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0,
+          "read_only": true,
+          "has_feedback": false
+        }
+      ]
+    },
+    "accountOther": {
+      "external_id": "ext:discogs:account:1234567",
+      "should_poll": false,
+      "params": ["DISCOGS_USERNAME"],
+      "features": [
+        {
+          "external_id": "ext:discogs:account:1234567:collection",
+          "category": "counter-sensor",
+          "type": "integer",
+          "min": 0,
+          "max": 10000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:wantlist",
+          "category": "counter-sensor",
+          "type": "integer",
+          "min": 0,
+          "max": 10000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:for_sale",
+          "category": "counter-sensor",
+          "type": "integer",
+          "min": 0,
+          "max": 10000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:value_min",
+          "category": "currency",
+          "type": "decimal",
+          "min": 0,
+          "max": 1000000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:value_median",
+          "category": "currency",
+          "type": "decimal",
+          "min": 0,
+          "max": 1000000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:value_max",
+          "category": "currency",
+          "type": "decimal",
+          "min": 0,
+          "max": 1000000000,
+          "read_only": true,
+          "has_feedback": false
+        },
+        {
+          "external_id": "ext:discogs:account:1234567:last_added",
+          "category": "text",
+          "type": "text",
+          "min": 0,
+          "max": 0,
+          "read_only": true,
+          "has_feedback": false
+        }
+      ]
+    },
+    "folder": {
+      "external_id": "ext:discogs:folder:1234567_1",
+      "should_poll": false,
+      "params": ["DISCOGS_FOLDER"],
+      "features": [
+        {
+          "external_id": "ext:discogs:folder:1234567_1:count",
+          "category": "counter-sensor",
+          "type": "integer",
+          "min": 0,
+          "max": 10000000,
+          "read_only": true,
+          "has_feedback": false
+        }
+      ]
+    }
+  },
+  "manifest": {
+    "actions": ["test_connection", "diagnostic"],
+    "config_schema": [
+      {
+        "key": "intro",
+        "type": "section"
+      },
+      {
+        "key": "token",
+        "type": "secret"
+      },
+      {
+        "key": "options_section",
+        "type": "section"
+      },
+      {
+        "key": "interval",
+        "type": "select"
+      },
+      {
+        "key": "currency",
+        "type": "select"
+      },
+      {
+        "key": "language",
+        "type": "select"
+      }
+    ],
+    "scene_triggers": [
+      {
+        "key": "collection_added",
+        "fields": [
+          {
+            "key": "folder",
+            "options": []
+          },
+          {
+            "key": "format",
+            "options": [
+              "Vinyl",
+              "CD",
+              "Cassette",
+              "File",
+              "CDr",
+              "Box Set",
+              "DVD",
+              "Blu-ray",
+              "Shellac",
+              "Minidisc"
+            ]
+          }
+        ],
+        "variables": [
+          {
+            "key": "release_id",
+            "type": "number"
+          },
+          {
+            "key": "title",
+            "type": "string"
+          },
+          {
+            "key": "artist",
+            "type": "string"
+          },
+          {
+            "key": "year",
+            "type": "number"
+          },
+          {
+            "key": "format",
+            "type": "string"
+          },
+          {
+            "key": "formats",
+            "type": "string"
+          },
+          {
+            "key": "label",
+            "type": "string"
+          },
+          {
+            "key": "catno",
+            "type": "string"
+          },
+          {
+            "key": "genre",
+            "type": "string"
+          },
+          {
+            "key": "url",
+            "type": "string"
+          },
+          {
+            "key": "cover_url",
+            "type": "string"
+          },
+          {
+            "key": "folder_name",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "wantlist_added",
+        "fields": [
+          {
+            "key": "format",
+            "options": [
+              "Vinyl",
+              "CD",
+              "Cassette",
+              "File",
+              "CDr",
+              "Box Set",
+              "DVD",
+              "Blu-ray",
+              "Shellac",
+              "Minidisc"
+            ]
+          }
+        ],
+        "variables": [
+          {
+            "key": "release_id",
+            "type": "number"
+          },
+          {
+            "key": "title",
+            "type": "string"
+          },
+          {
+            "key": "artist",
+            "type": "string"
+          },
+          {
+            "key": "year",
+            "type": "number"
+          },
+          {
+            "key": "format",
+            "type": "string"
+          },
+          {
+            "key": "formats",
+            "type": "string"
+          },
+          {
+            "key": "label",
+            "type": "string"
+          },
+          {
+            "key": "catno",
+            "type": "string"
+          },
+          {
+            "key": "genre",
+            "type": "string"
+          },
+          {
+            "key": "url",
+            "type": "string"
+          },
+          {
+            "key": "cover_url",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "scene_actions": [
+      {
+        "key": "random_release",
+        "fields": [
+          {
+            "key": "folder",
+            "options": []
+          }
+        ],
+        "outputs": [
+          {
+            "key": "found",
+            "type": "boolean"
+          },
+          {
+            "key": "release_id",
+            "type": "number"
+          },
+          {
+            "key": "title",
+            "type": "string"
+          },
+          {
+            "key": "artist",
+            "type": "string"
+          },
+          {
+            "key": "year",
+            "type": "number"
+          },
+          {
+            "key": "format",
+            "type": "string"
+          },
+          {
+            "key": "label",
+            "type": "string"
+          },
+          {
+            "key": "url",
+            "type": "string"
+          },
+          {
+            "key": "folder_name",
+            "type": "string"
+          },
+          {
+            "key": "summary",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "search_barcode",
+        "fields": [
+          {
+            "key": "barcode",
+            "options": []
+          }
+        ],
+        "outputs": [
+          {
+            "key": "found",
+            "type": "boolean"
+          },
+          {
+            "key": "matches",
+            "type": "number"
+          },
+          {
+            "key": "release_id",
+            "type": "number"
+          },
+          {
+            "key": "title",
+            "type": "string"
+          },
+          {
+            "key": "artist",
+            "type": "string"
+          },
+          {
+            "key": "year",
+            "type": "number"
+          },
+          {
+            "key": "format",
+            "type": "string"
+          },
+          {
+            "key": "label",
+            "type": "string"
+          },
+          {
+            "key": "url",
+            "type": "string"
+          },
+          {
+            "key": "country",
+            "type": "string"
+          },
+          {
+            "key": "summary",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "add_to_collection",
+        "fields": [
+          {
+            "key": "release",
+            "options": []
+          },
+          {
+            "key": "folder",
+            "options": []
+          },
+          {
+            "key": "allow_duplicate",
+            "options": []
+          }
+        ],
+        "outputs": [
+          {
+            "key": "added",
+            "type": "boolean"
+          },
+          {
+            "key": "already_owned",
+            "type": "boolean"
+          },
+          {
+            "key": "copies",
+            "type": "number"
+          },
+          {
+            "key": "release_id",
+            "type": "number"
+          },
+          {
+            "key": "title",
+            "type": "string"
+          },
+          {
+            "key": "artist",
+            "type": "string"
+          },
+          {
+            "key": "folder_name",
+            "type": "string"
+          },
+          {
+            "key": "summary",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "add_to_wantlist",
+        "fields": [
+          {
+            "key": "release",
+            "options": []
+          }
+        ],
+        "outputs": [
+          {
+            "key": "release_id",
+            "type": "number"
+          },
+          {
+            "key": "title",
+            "type": "string"
+          },
+          {
+            "key": "artist",
+            "type": "string"
+          },
+          {
+            "key": "summary",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "remove_from_wantlist",
+        "fields": [
+          {
+            "key": "release",
+            "options": []
+          }
+        ],
+        "outputs": [
+          {
+            "key": "removed",
+            "type": "boolean"
+          },
+          {
+            "key": "release_id",
+            "type": "number"
+          },
+          {
+            "key": "summary",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "get_price",
+        "fields": [
+          {
+            "key": "release",
+            "options": []
+          }
+        ],
+        "outputs": [
+          {
+            "key": "for_sale",
+            "type": "number"
+          },
+          {
+            "key": "lowest_price",
+            "type": "number"
+          },
+          {
+            "key": "currency",
+            "type": "string"
+          },
+          {
+            "key": "release_id",
+            "type": "number"
+          },
+          {
+            "key": "title",
+            "type": "string"
+          },
+          {
+            "key": "artist",
+            "type": "string"
+          },
+          {
+            "key": "summary",
+            "type": "string"
+          }
+        ]
+      },
+      {
+        "key": "get_collection",
+        "fields": [],
+        "outputs": [
+          {
+            "key": "records",
+            "type": "number"
+          },
+          {
+            "key": "wantlist",
+            "type": "number"
+          },
+          {
+            "key": "for_sale",
+            "type": "number"
+          },
+          {
+            "key": "value_min",
+            "type": "number"
+          },
+          {
+            "key": "value_median",
+            "type": "number"
+          },
+          {
+            "key": "value_max",
+            "type": "number"
+          },
+          {
+            "key": "currency",
+            "type": "string"
+          },
+          {
+            "key": "last_added",
+            "type": "string"
+          },
+          {
+            "key": "summary",
+            "type": "string"
+          }
+        ]
+      }
+    ],
+    "widgets": [
+      {
+        "key": "collection",
+        "settings": [],
+        "options": {}
+      },
+      {
+        "key": "recent",
+        "settings": ["list", "count", "display"],
+        "options": {
+          "list": ["collection", "wantlist"],
+          "display": ["grid", "list"]
+        }
+      },
+      {
+        "key": "random",
+        "settings": ["folder"],
+        "options": {}
+      }
+    ]
+  }
+}
