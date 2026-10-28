@@ -5,7 +5,7 @@ follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and versions
 follow [Semantic Versioning](https://semver.org/). This file is generated at
 each release from the Conventional Commits: do not edit it by hand.
 
-## [0.1.0] - unreleased
+## [0.1.0] - 2026-10-28
 
 ### Added
 
@@ -16,3 +16,5 @@ each release from the Conventional Commits: do not edit it by hand.
 - Configuration actions: test the connection, and a diagnostic written to the Logs tab (the token hidden).
 - Cloud transport: five requests per reading (every 15 minutes to 3 hours, 30 minutes by default), one at a time, within the 60 requests per minute of the API; covers read from the image host of Discogs only.
 - English, French, German and Spanish everywhere: settings, devices, widgets, scenes and documentation.
+
+[0.1.0]: https://github.com/William-De71/gladys-discogs/releases/tag/v0.1.0
